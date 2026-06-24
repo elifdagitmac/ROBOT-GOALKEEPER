@@ -1,18 +1,18 @@
  #include <Servo.h> 
  Servo motor; 
- int deger; //Anlık okuduğumuz değer 
- int derece;// Gelen değeri çevireceğimiz derece  
+ int deger; // The value we are reading at the moment 
+ int derece;// The degree we will convert the incoming value to  
   
  void setup() { 
-   motor.attach(5); //motorun sinyal pinini tanımladık   
+   motor.attach(5); // We defined signal pin of the motor    
     
   
  } 
   
 void loop() { 
-   deger = analogRead (A0); //joystick değerinin okunacağı pin  
-   derece = map(deger, 0,1023,0,180);//map fonksiyonu joystickten gelen değeri önce sayısal veriye daha sonra 0 ve 180 arasında dereceye döndürüyoruz  
-   motor.write(derece);// motor elde ettiğimiz dereceye göre hareket sağlıyor  
+   deger = analogRead (A0); // Joystick is gonna read that value  
+   derece = map(deger, 0,1023,0,180);// We first convert the value coming from the joystick into a numeric value using the map function, then turn it into a degree between 0 and 180  
+   motor.write(derece);// Motor will move according to degree we get  
 } 
   
  } 
